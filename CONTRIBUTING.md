@@ -6,14 +6,14 @@ Deep Thinking LLC does not currently accept unsolicited external contributions t
 
 If you have a patch you believe is critical, open an issue first so we can confirm fit and review path before you spend time on a pull request.
 
-If a maintainer explicitly invites a pull request, the Contributor License Agreement must be signed before the PR can be merged. CLA Assistant will prompt automatically when that flow is enabled in the org.
+If a maintainer explicitly invites a pull request, the Contributor License Agreement must be signed before the PR can be merged. CLA Assistant or an equivalent check will prompt automatically when that flow is enabled in the org.
 
 Repository-local draft CLA materials live in [docs/legal/README.md](docs/legal/README.md). Those drafts are for review and legal iteration only; they are not the operative signed agreements.
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/voxeltron/voxeltron.git
+git clone https://github.com/deep-thinking-llc/voxeltron.git
 cd voxeltron
 ```
 
