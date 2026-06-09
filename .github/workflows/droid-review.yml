@@ -13,7 +13,7 @@ jobs:
     # Skip drafts and fork PRs: repo secrets (FACTORY_API_KEY) are not exposed
     # to forks, so a fork run would auth with an empty key and no-op/fail.
     if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     permissions:
       contents: read
       pull-requests: write
