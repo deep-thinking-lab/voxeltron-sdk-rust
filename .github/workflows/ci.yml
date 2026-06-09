@@ -9,6 +9,11 @@ on:
 jobs:
   rust:
     runs-on: [self-hosted, linux]
+    # Self-hosted runners persist state and credentials, so never run untrusted
+    # fork PR code on them. Allow push events and same-repo PRs only.
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,3 +21,8 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Cargo check
         run: cargo check
+      - name: Clean workspace
+        if: always()
+        run: |
+          git clean -ffdx
+          git reset --hard HEAD
