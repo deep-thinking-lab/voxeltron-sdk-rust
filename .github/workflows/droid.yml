@@ -12,6 +12,10 @@ on:
   pull_request:
     types: [opened, edited]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   droid:
     # Only trusted actors (owner/member/collaborator) may invoke @droid, and
